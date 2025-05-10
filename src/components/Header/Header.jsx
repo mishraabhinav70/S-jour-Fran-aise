@@ -13,6 +13,15 @@ const Header = () => {
 
   const dropdownRef = useRef(null);
 
+  const ourServices = [
+    { name: 'All Courses', href: '/courses' },
+    { name: 'Kids & Teens French Classes (Beginners/Non-beginners)', href: '/courses/kids' },
+    { name: 'Focused French Courses (Beginners/Non-beginners)', href: '/courses/focus-french' },
+    { name: 'TCF/TEF Exam', href: '/tcftef' },
+    { name: 'Orientation Test', href: '/orientationtest' },
+    { name: 'Private Tuition', href: '/private-tuition' }
+  ];
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -28,15 +37,6 @@ const Header = () => {
       document.removeEventListener('touchstart', handleClickOutside);
     };
   }, []);
-
-  const ourServices = [
-    { name: 'All Courses', href: '/courses' },
-    { name: 'Kids & Teens French Classes (Beginners/Non-beginners)', href: '/courses/kids' },
-    { name: 'Focused French Courses (Beginners/Non-beginners)', href: '/courses/focus-french' },
-    { name: 'TCF/TEF Exam', href: '/tcftef' },
-    { name: 'Orientation Test', href: '/orientationtest' },
-    { name: 'Private Tuition', href: '/private-tuition' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +72,7 @@ const Header = () => {
               <button
                 className="text-black group inline-flex items-center hover:text-blue-600 px-3 py-2 text-2xl font-medium"
                 onClick={() => setIsCourseDropdownOpen(!isCourseDropdownOpen)}
+                aria-expanded={isCourseDropdownOpen}
               >
                 Course Categories
                 <FiChevronDown className="ml-2 h-4 w-4" />
@@ -84,17 +85,16 @@ const Header = () => {
                 >
                   <div className="divide-y divide-gray-100">
                     {ourServices.map((category) => (
-                      <a
+                      <Link
                         key={category.name}
-                        href={category.href}
+                        to={category.href}
                         className="flex items-start gap-3 px-5 py-3 text-base text-black hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 rounded-md"
-                        role="menuitem"
                       >
                         <div className="mt-1 text-blue-600">
                           <FiChevronDown className="w-4 h-4 rotate-270" />
                         </div>
                         <span className="text-lg">{category.name}</span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -132,16 +132,16 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link to='/'>
-                <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100">
-                  Home
-                </a>
+              <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+                Home
               </Link>
 
               <div className="relative">
                 <button
                   onClick={() => setIsCourseDropdownOpenMobile(!isCourseDropdownOpenMobile)}
-                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100"
+                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+                  aria-expanded={isCourseDropdownOpenMobile}
+                  aria-controls="mobile-course-menu"
                 >
                   <span className="flex items-center justify-between">
                     Course Categories
@@ -152,10 +152,10 @@ const Header = () => {
                 {isCourseDropdownOpenMobile && (
                   <div className="pl-4">
                     {ourServices.map((category) => (
-                      <Link to ={category.href}
+                      <Link
+                        to={category.href}
                         key={category.name}
-                        // href={category.href}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
                       >
                         {category.name}
                       </Link>
@@ -164,16 +164,12 @@ const Header = () => {
                 )}
               </div>
 
-              <Link to='/about'>
-                <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100">
-                  About
-                </a>
+              <Link to='/about' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+                About
               </Link>
 
-              <Link to='/contact'>
-                <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100">
-                  Contact Us
-                </a>
+              <Link to='/contact' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+                Contact Us
               </Link>
             </div>
           </div>
