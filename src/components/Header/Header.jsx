@@ -152,13 +152,13 @@ const Header = () => {
                 {isCourseDropdownOpenMobile && (
                   <div className="pl-4">
                     {ourServices.map((category) => (
-                      <a
+                      <Link to ={category.href}
                         key={category.name}
-                        href={category.href}
+                        // href={category.href}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-600 hover:bg-gray-100"
                       >
                         {category.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
