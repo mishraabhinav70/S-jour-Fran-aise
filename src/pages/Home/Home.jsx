@@ -173,6 +173,37 @@ const Home = () => {
             guidance for progressive and independent learning</li>
         </ul>
       </div>
+
+{/* Testimonials Section */}
+<div className="container mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-center mb-4">💬 What Our <span className='text-red-500'>Students</span> Say</h2>
+        <p className="text-xl text-gray-600 text-center mb-12">          Our students love us! Here’s what they have to say about their experience with Séjour Française.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className={`${testimonial.backgroundColor} p-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-white`}
+              aria-label={`Testimonial from ${testimonial.name}`}
+              tabIndex="0"
+            >
+              <div className="flex items-start">
+                {/* <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  className="w-16 h-16 rounded-full mr-4 object-cover"
+                /> */}
+                <div>
+                  <FaQuoteLeft className="text-gray-400 mb-2" />
+                  <p className="text-gray-800 mb-4">{testimonial.review}</p>
+                  <p className="font-semibold">{testimonial.name}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Animated Quote Section */}
       <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -203,36 +234,6 @@ const Home = () => {
         <div className="absolute -bottom-10 -right-10 w-52 h-52 bg-red-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse delay-1000 z-10"></div>
       </div>
 
-
-      {/* Testimonials Section */}
-      {/* <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-4">💬 What Our Students Say</h2>
-        <p className="text-xl text-gray-600 text-center mb-12">          Our students love us! Here’s what they have to say about their experience with Séjour Française.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className={`${testimonial.backgroundColor} p-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-white`}
-              aria-label={`Testimonial from ${testimonial.name}`}
-              tabIndex="0"
-            >
-              <div className="flex items-start">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mr-4 object-cover"
-                />
-                <div>
-                  <FaQuoteLeft className="text-gray-400 mb-2" />
-                  <p className="text-gray-800 mb-4">{testimonial.review}</p>
-                  <p className="font-semibold">{testimonial.name}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 };
