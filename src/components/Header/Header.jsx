@@ -119,7 +119,7 @@ const Header = () => {
             <Link to="/about" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition">
               Get Started
             </Link>
-            <Link to="/about" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition">
+            <Link to="/about" className=" text-white px-4 py-2 border-white border-2 rounded-md text-sm sm:text-base font-semibold hover:bg-white hover:text-blue-600 transition">
               registration
             </Link>
           </div>
