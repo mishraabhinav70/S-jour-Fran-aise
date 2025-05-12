@@ -65,7 +65,7 @@ const Home = () => {
   return (
     <section className="bg-white">
       <div data-aos="zoom-out">
-        <Marquee speed={50} gradient={false} pauseOnHover={true} className='mb-5 mt-5'>
+        <Marquee speed={30} gradient={false} pauseOnHover={true} className='mb-5 mt-5'>
           <img src={pic1} alt="Photo 1" className="h-60 mx-8 rounded-xl shadow-2xl" />
           <img src={pic2} alt="Photo 2" className="h-60 mx-8 rounded-xl shadow-2xl" />
           <img src={pic3} alt="Photo 3" className="h-60 mx-8 rounded-xl shadow-2xl" />
@@ -157,8 +157,6 @@ const Home = () => {
             guidance for progressive and independent learning</li>
         </ul>
       </div>
-
-
 
       {/* Testimonials Section */}
       {/* <div className="container mx-auto px-4 py-16">

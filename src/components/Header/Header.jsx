@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import logo from '/src/assets/logo.png';
 
@@ -40,6 +40,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (Math.abs(window.scrollY - lastScrollY) < 10) return;
+
       if (window.scrollY > lastScrollY) {
         setShowHeader(false);
       } else {
@@ -52,27 +54,33 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const handleMobileLinkClick = () => {
+    setIsMenuOpen(false);
+    setIsCourseDropdownOpenMobile(false);
+  };
+
   return (
-    <header className={`bg-white shadow-md sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
-      <nav className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-32 items-center">
+    <header className={`bg-blue-950 shadow-md sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
+      <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 md:h-28 lg:h-32">
           <Link to='/'>
             <div className="flex-shrink-0 flex items-center">
-              <img className="h-28 w-auto rounded-full" src={logo} alt="Institution Logo" />
+              <img className="h-16 md:h-24 w-auto rounded-full shadow-lg ring-2 ring-white" src={logo} alt="Institution Logo" />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-black hover:text-blue-600 px-3 py-2 text-2xl font-medium">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
+            <Link to="/" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
               Home
             </Link>
 
             <div className="relative">
               <button
-                className="text-black group inline-flex items-center hover:text-blue-600 px-3 py-2 text-2xl font-medium"
+                className="text-white group inline-flex items-center hover:text-blue-400 px-3 py-2 text-base font-medium"
                 onClick={() => setIsCourseDropdownOpen(!isCourseDropdownOpen)}
                 aria-expanded={isCourseDropdownOpen}
+                aria-haspopup="true"
               >
                 Course Categories
                 <FiChevronDown className="ml-2 h-4 w-4" />
@@ -81,7 +89,8 @@ const Header = () => {
               {isCourseDropdownOpen && (
                 <div
                   ref={dropdownRef}
-                  className="absolute z-20 -ml-4 mt-4 w-72 rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-10 transition-all duration-300"
+                  className="absolute z-20 mt-4 w-72 md:w-80 lg:w-96 rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-10 transition-all duration-300"
+                  role="menu"
                 >
                   <div className="divide-y divide-gray-100">
                     {ourServices.map((category) => (
@@ -90,10 +99,8 @@ const Header = () => {
                         to={category.href}
                         className="flex items-start gap-3 px-5 py-3 text-base text-black hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 rounded-md"
                       >
-                        <div className="mt-1 text-blue-600">
-                          <FiChevronDown className="w-4 h-4 rotate-270" />
-                        </div>
-                        <span className="text-lg">{category.name}</span>
+                        <FiChevronRight className="w-4 h-4 mt-1 text-blue-600" />
+                        <span className="text-base">{category.name}</span>
                       </Link>
                     ))}
                   </div>
@@ -101,12 +108,16 @@ const Header = () => {
               )}
             </div>
 
-            <Link to="/about" className="text-black hover:text-blue-600 px-3 py-2 text-2xl font-medium">
+            <Link to="/about" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
               About
             </Link>
 
-            <Link to="/contact" className="text-black hover:text-blue-600 px-3 py-2 text-2xl font-medium">
+            <Link to="/contact" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
               Contact Us
+            </Link>
+
+            <Link to="/about" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition">
+              Get Started
             </Link>
           </div>
 
@@ -115,9 +126,9 @@ const Header = () => {
             <button
               onClick={() => {
                 setIsMenuOpen(!isMenuOpen);
-                setIsCourseDropdownOpenMobile(false); // close dropdown on toggle
+                setIsCourseDropdownOpenMobile(false);
               }}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-400 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               {isMenuOpen ? (
                 <FiX className="block h-6 w-6" />
@@ -130,16 +141,16 @@ const Header = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link to='/' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+          <div className="md:hidden px-4 sm:px-6 lg:px-8">
+            <div className="space-y-1 pb-4">
+              <Link to='/' onClick={handleMobileLinkClick} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
                 Home
               </Link>
 
               <div className="relative">
                 <button
                   onClick={() => setIsCourseDropdownOpenMobile(!isCourseDropdownOpenMobile)}
-                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900"
                   aria-expanded={isCourseDropdownOpenMobile}
                   aria-controls="mobile-course-menu"
                 >
@@ -150,12 +161,13 @@ const Header = () => {
                 </button>
 
                 {isCourseDropdownOpenMobile && (
-                  <div className="pl-4">
+                  <div className="pl-4 space-y-1">
                     {ourServices.map((category) => (
                       <Link
                         to={category.href}
                         key={category.name}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+                        onClick={handleMobileLinkClick}
+                        className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900"
                       >
                         {category.name}
                       </Link>
@@ -164,12 +176,16 @@ const Header = () => {
                 )}
               </div>
 
-              <Link to='/about' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+              <Link to='/about' onClick={handleMobileLinkClick} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
                 About
               </Link>
 
-              <Link to='/contact' className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100">
+              <Link to='/contact' onClick={handleMobileLinkClick} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
                 Contact Us
+              </Link>
+
+              <Link to="/get-started" onClick={handleMobileLinkClick} className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-blue-700 transition">
+                Get Started
               </Link>
             </div>
           </div>

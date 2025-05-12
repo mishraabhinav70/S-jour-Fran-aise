@@ -18,8 +18,8 @@ function FocusFrenchCourses() {
       <section className="bg-white">
         {/* Hero Section */}
         <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-                  <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
-                  <div className="relative z-10 text-center px-6 max-w-3xl">
+          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
+          <div className="relative z-10 text-center px-6 max-w-3xl">
             <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Focus French Courses (Beginners / Non-Beginners)
             </h1>
@@ -30,10 +30,10 @@ function FocusFrenchCourses() {
               In addition to general classes, Séjour Française offers you a wide range of Focus French Courses adapted to your learning needs. Improve specific language skills such as pronunciation or grammar, get ready for your exams. Complete your learning journey with us by signing up to our Focus French classes and immerse more into French language and culture!          </p>
 
           </div>
-           <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-                    style={{ backgroundImage: `url(${cover})` }}
-                  ></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
+            style={{ backgroundImage: `url(${cover})` }}
+          ></div>
         </section>
 
         {/* Focused Courses */}
@@ -59,18 +59,21 @@ function FocusFrenchCourses() {
         </div>
 
         {/* Registration Information */}
-        <div data-aos="fade-up" className="bg-white rounded-4xl p-5 text-center ">
-          <h4 className="text-red-500 font-bold text-2xl">DELF DALF Class Registration</h4>
-          <ul className="text-gray-700 list-inside list-disc mt-4">
-            <li>The batch size would be maximum 6-8 per batch.</li>
-            <li>All 4 competencies would be covered simultaneously.</li>
-            <li>Admissions are strictly on a First-Come-First-Serve basis.</li>
-            <li>New student admission fee will include Rs 500/- registration charges.</li>
-          </ul>
+        <div className="flex justify-center px-4">
+          <div data-aos="fade-up" className="bg-white rounded-3xl p-5 mt-10 shadow-md max-w-xl w-full">
+            <h4 className="text-red-500 font-bold text-2xl text-center">DELF DALF Class Registration</h4>
+            <ul className="text-gray-700 list-inside list-disc mt-4">
+              <li>The batch size would be maximum 6-8 per batch.</li>
+              <li>All 4 competencies would be covered simultaneously.</li>
+              <li>Admissions are strictly on a First-Come-First-Serve basis.</li>
+              <li>New student admission fee will include Rs 500/- registration charges.</li>
+            </ul>
+          </div>
         </div>
 
+
         {/* Crash Course */}
-        <div data-aos="fade-up" className="bg-blue-950 py-10 mt-10 mx-40 shadow-md rounded-lg">
+        <div data-aos="fade-up" className="bg-blue-950 py-10 mt-10 lg:mx-50 max-sm:mx-5 md:mx-20 sm:mx-5  shadow-md rounded-lg">
           <div className="max-w-screen-xl mx-auto px-4">
             <h3 className="text-2xl font-semibold text-white text-center mb-6">Crash Course</h3>
             <p className="text-lg text-white max-w-3xl mx-auto mb-8 text-center">
