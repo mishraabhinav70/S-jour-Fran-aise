@@ -187,14 +187,15 @@ const Header = () => {
               <Link to='/contact' onClick={handleMobileLinkClick} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
                 Contact Us
               </Link>
-<div className="flex flex-row gap-2">
-              <Link to="/about" onClick={handleMobileLinkClick} className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-blue-700 transition">
-                Get Started
-              </Link>
+              <div className="flex flex-row gap-2">
+                <Link to="/about" onClick={handleMobileLinkClick} className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-blue-700 transition">
+                  Get Started
+                </Link>
 
-              <Link to="/about" className=" block w-full text-center border-white border-2 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-white hover:text-blue-600 transition">
-              registration
-            </Link></div>
+                <Link to="/about" className=" block w-full text-center border-white border-2 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-white hover:text-blue-600 transition">
+                  registration
+                </Link>
+              </div>
             </div>
           </div>
         )}
