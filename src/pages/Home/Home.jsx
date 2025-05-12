@@ -152,7 +152,7 @@ const Home = () => {
           <li>🎓 Curriculum aligned with the CEFR (A1 to C1)</li>
           <li>🗣️ Regular speaking and writing practice</li>
           <li>📊 Personalized feedback and progress tracking</li>
-          <li>🌐 Access to a learning community to practice French daily</li>
+          <li>Access to a learning community to practice French daily</li>
           <li>🤖 Provision of unique AI assistance tools along with Teacher’s
             guidance for progressive and independent learning</li>
         </ul>
