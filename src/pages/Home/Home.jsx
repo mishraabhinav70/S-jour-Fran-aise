@@ -187,7 +187,7 @@ const Home = () => {
           <div
             key={currentIndex}
             data-aos="fade-up"
-            className="relative p-8 bg-gradient-to-r from-blue-300 via-white to-red-300 rounded-2xl shadow-lg border border-blue-100 transition duration-1000 ease-in-out"
+            className="relative p-8 bg-gradient-to-r from-blue-100 via-white to-red-100 rounded-2xl shadow-lg border border-blue-100 transition duration-1000 ease-in-out"
           >
             <div className="absolute -top-5 left-5 bg-blue-500 text-white p-2 rounded-full shadow-md">
               <FaQuoteLeft className="text-lg" />
