@@ -119,6 +119,9 @@ const Header = () => {
             <Link to="/about" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition">
               Get Started
             </Link>
+            <Link to="/about" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition">
+              registration
+            </Link>
           </div>
 
           {/* Mobile menu button */}
