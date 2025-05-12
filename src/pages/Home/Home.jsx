@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import cover from '/src/assets/gif2.gif';
+import quote from '/src/assets/quotes.gif';
 import Marquee from "react-fast-marquee";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -61,6 +62,21 @@ const Home = () => {
     },
   ];
 
+  const quotes = [
+    "Apprendre une langue, c’est avoir une fenêtre de plus par laquelle regarder le monde.",
+    "Le français est la langue de l’amour, de la diplomatie et de la pensée claire.",
+    "Avoir une autre langue, c’est posséder une deuxième âme."
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % quotes.length);
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [quotes.length]);
 
   return (
     <section className="bg-white">
@@ -78,7 +94,7 @@ const Home = () => {
       {/* Hero Section */}
       <div className="relative min-h-[10vh]">
         <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
+          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-100 z-0 blur-lg" />
           <div data-aos="fade-up" className="relative z-10 text-center px-6 max-w-3xl">
             <h1 className="text-5xl font-bold text-gray-800 mb-2">Welcome to<span className='text-rose-600'> Séjour Française</span></h1>
             <p className="text-xl text-gray-900 italic mb-2">
@@ -157,6 +173,36 @@ const Home = () => {
             guidance for progressive and independent learning</li>
         </ul>
       </div>
+      {/* Animated Quote Section */}
+      <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={quote}
+            alt="Animated Background"
+            className="w-full h-full object-cover opacity-80"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <div
+            key={currentIndex}
+            data-aos="fade-up"
+            className="relative p-8 bg-gradient-to-r from-blue-300 via-white to-red-300 rounded-2xl shadow-lg border border-blue-100 transition duration-1000 ease-in-out"
+          >
+            <div className="absolute -top-5 left-5 bg-blue-500 text-white p-2 rounded-full shadow-md">
+              <FaQuoteLeft className="text-lg" />
+            </div>
+            <p className="text-gray-700 text-lg sm:text-xl italic leading-relaxed">
+              “{quotes[currentIndex]}”
+            </p>
+          </div>
+        </div>
+
+        {/* 🔵 Decorative blur circles */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse z-10"></div>
+        <div className="absolute -bottom-10 -right-10 w-52 h-52 bg-red-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse delay-1000 z-10"></div>
+      </div>
+
 
       {/* Testimonials Section */}
       {/* <div className="container mx-auto px-4 py-16">
