@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import cover from '/src/assets/gif.gif';
+import cover from '/src/assets/gif2.gif';
 import Marquee from "react-fast-marquee";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -80,18 +80,18 @@ const Home = () => {
         <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
           <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
           <div data-aos="fade-up" className="relative z-10 text-center px-6 max-w-3xl">
-            <h1 className="text-5xl font-bold text-gray-800 mb-2">Welcome to<span className='text-rose-500'> Séjour Française</span></h1>
+            <h1 className="text-5xl font-bold text-gray-800 mb-2">Welcome to<span className='text-rose-600'> Séjour Française</span></h1>
             <p className="text-xl text-gray-900 italic mb-2">
               ...Your Path to Mastering French<br /> <br />Learn anywhere, anytime with expert teachers and smart AI tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/courses">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
+                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
                   Explore Courses
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="border border-gray-500 text-gray-900 hover:bg-white hover:text-blue-900 font-semibold py-3 px-6 rounded-md text-lg transition">
+                <button className="border border-red-500 text-red-700 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-md text-lg transition">
                   Contact Us
                 </button>
               </Link>
