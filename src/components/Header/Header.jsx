@@ -118,7 +118,7 @@ const Header = () => {
                 Get Started
               </Link>
 
-              <Link to="/about" className="text-white px-4 py-2 border-white border-2 rounded-md text-sm sm:text-base font-semibold hover:bg-white hover:text-blue-600 transition">
+              <Link to="/registration" className="text-white px-4 py-2 border-white border-2 rounded-md text-sm sm:text-base font-semibold hover:bg-white hover:text-blue-600 transition">
                 Registration
               </Link>
             </div>
@@ -191,7 +191,7 @@ const Header = () => {
                   Get Started
                 </Link>
 
-                <Link to="/about" className="block text-center border-white border-2 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-white hover:text-blue-600 transition">
+                <Link to="/registration" className="block text-center border-white border-2 text-white px-4 py-2 rounded-md text-base font-semibold hover:bg-white hover:text-blue-600 transition">
                   Registration
                 </Link>
               </div>

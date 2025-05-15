@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import cover from '/src/assets/gif2.gif';
+import cover from '/src/assets/gif7.gif';
+import Mobilecover from '/src/assets/mobilegif5.gif';
 import quote from '/src/assets/quotes.gif';
 import Marquee from "react-fast-marquee";
 import AOS from 'aos';
@@ -41,23 +42,23 @@ const Home = () => {
   const testimonials = [
     {
       id: 1,
-      name: "John Doe",
+      name: "Riya Sharma, Delhi, India 🇮🇳",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      review: "This product has completely transformed the way I work. It's intuitive, efficient, and a game-changer for my productivity.",
+      review: "I started as a complete beginner, and in just a few months, I was confidently speaking in French! The classes are interactive, and the AI tools really helped me practice outside class hours.",
       backgroundColor: "bg-white",
     },
     {
       id: 2,
-      name: "Jane Smith",
+      name: "Meenakshi R., Parent, Bangalore, India 🇮🇳",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      review: "I'm impressed with the level of customer support. The team goes above and beyond to ensure customer satisfaction.",
+      review: "My kids (ages 10 and 14) love the weekend French classes. The teachers are patient and experienced, and the progress reports help us track their development closely.",
       backgroundColor: "bg-white",
     },
     {
       id: 3,
-      name: "Mike Johnson",
+      name: "Élise Martin, Singapore 🇸🇬",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      review: "The quality of this product exceeded my expectations. It's durable, well-designed, and worth every penny.",
+      review: "Séjour Française has a perfect balance of tech and teaching. The AI exercises helped me prepare for the TEF exam with confidence. Highly recommended for Canada immigration applicants.",
       backgroundColor: "bg-white",
     },
   ];
@@ -80,44 +81,85 @@ const Home = () => {
 
   return (
     <section className="bg-white">
-      <div data-aos="zoom-out">
-        <Marquee speed={30} gradient={false} pauseOnHover={true} className='mb-5 mt-5'>
-          <img src={pic1} alt="Photo 1" className="h-60 mx-8 rounded-xl shadow-2xl" />
-          <img src={pic2} alt="Photo 2" className="h-60 mx-8 rounded-xl shadow-2xl" />
-          <img src={pic3} alt="Photo 3" className="h-60 mx-8 rounded-xl shadow-2xl" />
-          <img src={pic4} alt="Photo 4" className="h-60 mx-8 rounded-xl shadow-2xl" />
-          <img src={pic5} alt="Photo 4" className="h-60 mx-8 rounded-xl shadow-2xl" />
-          <img src={pic2} alt="Photo 2" className="h-60 mx-8 rounded-xl shadow-2xl" />
-        </Marquee>
-      </div>
-
       {/* Hero Section */}
       <div className="relative min-h-[10vh]">
-        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-100 z-0 blur-lg" />
-          <div data-aos="fade-up" className="relative z-10 text-center px-6 max-w-3xl">
-            <h1 className="text-5xl font-bold text-gray-800 mb-2">Welcome to<span className='text-rose-600'> Séjour Française</span></h1>
-            <p className="text-xl text-gray-900 italic mb-2">
-              ...Your Path to Mastering French<br /> <br />Learn anywhere, anytime with expert teachers and smart AI tools.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/courses">
-                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-                  Explore Courses
-                </button>
-              </Link>
-              <Link to="/contact">
-                <button className="border border-red-500 text-red-700 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat filter"
-            style={{ backgroundImage: `url(${cover})` }}
-          ></div>
-        </section>
+  <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
+
+    {/* Large screen image */}
+    <img
+      src={cover}
+      alt="Orientation Test"
+      className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+    />
+
+    {/* Medium & small screen image */}
+    <img
+      src={Mobilecover}
+      alt="Orientation Test Mobile"
+      className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+    />
+
+    <div data-aos="fade-up" className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+        Welcome to <span className="text-rose-600">Séjour Française</span>
+      </h1>
+      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic mb-4">
+        ...Your Path to Mastering French <br /> <br />
+        Learn anywhere, anytime with expert teachers and smart AI tools.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Link to="/courses">
+          <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-base sm:text-lg transition">
+            Explore Courses
+          </button>
+        </Link>
+        <Link to="/contact">
+          <button className="border bg-white/75 border-red-500 text-red-700 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-md text-base sm:text-lg transition">
+            Contact Us
+          </button>
+        </Link>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+      <div className="flex flex-wrap justify-center gap-4 mt-5">
+  <Link to="/courses">
+    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
+      Explore Courses
+    </button>
+  </Link>
+  <Link to="/courses">
+    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
+      Explore Courses
+    </button>
+  </Link>
+  <Link to="/courses">
+    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
+      Explore Courses
+    </button>
+  </Link>
+  <Link to="/courses">
+    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
+      Explore Courses
+    </button>
+  </Link>
+</div>
+
+      {/* Marquee Section */}
+      <div data-aos="zoom-out">
+        <Marquee speed={30} gradient={false} pauseOnHover={true} className='mb-5 mt-5'>
+          <img src={pic1} alt="Photo 1" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic2} alt="Photo 2" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic3} alt="Photo 3" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic4} alt="Photo 4" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic5} alt="Photo 4" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic2} alt="Photo 2" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic3} alt="Photo 3" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic4} alt="Photo 4" className="h-40 mx-8 rounded-xl shadow-2xl" />
+          <img src={pic5} alt="Photo 4" className="h-40 mx-8 rounded-xl shadow-2xl" />
+        </Marquee>
       </div>
 
       {/* Our Mission */}
@@ -147,10 +189,10 @@ const Home = () => {
               data-aos-delay={100 * idx}
               className="bg-white border shadow-2xl rounded-lg p-6 hover:shadow-xl transition"
             >
-              <h4 className="text-xl font-semibold text-blue-900 mb-2">{course.title}</h4>
+              <h4 className="text-xl font-semibold text-red-600 mb-2">{course.title}</h4>
               <p className="text-gray-700 mb-4">{course.desc}</p>
               <Link to={course.link}>
-                <button className="bg-blue-700 hover:bg-blue-900 text-white py-2 px-4 rounded transition">
+                <button className="bg-red-600 hover:bg-red-700 font-bold text-white py-2 px-4 rounded transition">
                   Learn More
                 </button>
               </Link>
@@ -174,10 +216,10 @@ const Home = () => {
         </ul>
       </div>
 
-{/* Testimonials Section */}
-<div className="container mx-auto px-4 py-16">
+      {/* Testimonials Section */}
+      <div className="container mx-auto px-4 py-16">
         <h2 className="text-4xl font-bold text-center mb-4">💬 What Our <span className='text-red-500'>Students</span> Say</h2>
-        <p className="text-xl text-gray-600 text-center mb-12">          Our students love us! Here’s what they have to say about their experience with Séjour Française.
+        <p className="text-xl text-gray-600 text-center mb-12">          Our students love us! Here’s what they have to say about their experience with <span className='text-red-600 font-bold'>Séjour Française</span>.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (

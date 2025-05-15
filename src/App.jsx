@@ -11,6 +11,7 @@ import FocusFrenchCourses from './pages/Courses/FocusFrenchCourses'
 import TcfTefCourse from './pages/Courses/TcfTefCourse'
 import OrientationTest from './pages/Courses/OrientationTest'
 import PrivateTuition from './pages/Courses/PrivateTuition'
+import RegistrationForm from './pages/RegistrationForm/RegistrationForm'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/tcftef' element={<TcfTefCourse/>}/>
         <Route path='/orientationtest' element={<OrientationTest/>}/>
         <Route path='/PrivateTuition' element={<PrivateTuition />}/>
+        <Route path='/registration' element={<RegistrationForm/>}/>
       </Routes>
       <Footer />
       </BrowserRouter>
