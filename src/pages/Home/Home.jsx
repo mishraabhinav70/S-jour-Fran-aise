@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import cover from '/src/assets/gif7.gif';
+import cover from '/src/assets/animatedcover.gif';
 import Mobilecover from '/src/assets/mobilegif5.gif';
 import quote from '/src/assets/quotes.gif';
 import Marquee from "react-fast-marquee";
@@ -12,6 +12,9 @@ import pic3 from '/src/assets/pic3.jpg';
 import pic4 from '/src/assets/pic4.jpg';
 import pic5 from '/src/assets/pic5.jpg';
 import { FaQuoteLeft } from "react-icons/fa";
+import { FaUserPlus, FaUserGraduate, FaUserTie } from 'react-icons/fa';
+import { motion } from "framer-motion";
+
 
 const Home = () => {
   useEffect(() => {
@@ -79,74 +82,116 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [quotes.length]);
 
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 80, damping: 12 }
+    }
+  };
+
+
   return (
     <section className="bg-white">
       {/* Hero Section */}
       <div className="relative min-h-[10vh]">
-  <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
+        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
 
-    {/* Large screen image */}
-    <img
-      src={cover}
-      alt="Orientation Test"
-      className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
-    />
+          {/* Large screen image */}
+          <img
+            src={cover}
+            alt="Orientation Test"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
 
-    {/* Medium & small screen image */}
-    <img
-      src={Mobilecover}
-      alt="Orientation Test Mobile"
-      className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-100 z-0"
-    />
+          {/* Medium & small screen image */}
+          <img
+            src={Mobilecover}
+            alt="Orientation Test Mobile"
+            className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
 
-    <div data-aos="fade-up" className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-        Welcome to <span className="text-rose-600">Séjour Française</span>
-      </h1>
-      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic mb-4">
-        ...Your Path to Mastering French <br /> <br />
-        Learn anywhere, anytime with expert teachers and smart AI tools.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link to="/courses">
-          <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-base sm:text-lg transition">
-            Explore Courses
-          </button>
-        </Link>
-        <Link to="/contact">
-          <button className="border bg-white/75 border-red-500 text-red-700 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-md text-base sm:text-lg transition">
-            Contact Us
-          </button>
-        </Link>
+          <div data-aos="fade-up" className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+              Welcome to <span className="text-rose-600">Séjour Française</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic mb-4">
+              ...Your Path to Mastering French <br /> <br />
+              Learn anywhere, anytime with expert teachers and smart AI tools.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/courses">
+                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full text-base sm:text-lg transition">
+                  Explore Courses
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="border bg-white/75 border-red-500 text-red-700 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-full text-base sm:text-lg transition">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
+
+      <div data-aos="fade-up" className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10 mb-8 px-4">
+      {/* Registration Portal */}
+      <motion.div
+        variants={containerVariants}
+        animate="visible"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 p-6 w-full sm:w-72 text-center border border-red-100"
+      >
+        <FaUserPlus className="mx-auto text-red-600 text-4xl mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Registration Portal</h3>
+        <p className="text-gray-600 mb-4">For new & unregistered users</p>
+        <Link to="/courses">
+          <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-full transition">
+            Register Now
+          </button>
+        </Link>
+      </motion.div>
+
+      {/* Student Portal */}
+      <motion.div
+        variants={containerVariants}
+        animate="visible"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 p-6 w-full sm:w-72 text-center border border-red-100"
+      >
+        <FaUserGraduate className="mx-auto text-red-600 text-4xl mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Student Portal</h3>
+        <p className="text-gray-600 mb-4">For registered students only</p>
+        <Link to="/courses">
+          <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-full transition">
+            Enter Portal
+          </button>
+        </Link>
+      </motion.div>
+
+      {/* Staff Portal */}
+      <motion.div
+        variants={containerVariants}
+        animate="visible"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 p-6 w-full sm:w-72 text-center border border-red-100"
+      >
+        <FaUserTie className="mx-auto text-red-600 text-4xl mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Staff Portal</h3>
+        <p className="text-gray-600 mb-4">For staff only</p>
+        <Link to="/courses">
+          <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-full transition">
+            Access Portal
+          </button>
+        </Link>
+      </motion.div>
     </div>
-  </section>
-</div>
-
-
-      <div className="flex flex-wrap justify-center gap-4 mt-5">
-  <Link to="/courses">
-    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-      Explore Courses
-    </button>
-  </Link>
-  <Link to="/courses">
-    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-      Explore Courses
-    </button>
-  </Link>
-  <Link to="/courses">
-    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-      Explore Courses
-    </button>
-  </Link>
-  <Link to="/courses">
-    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md text-lg transition">
-      Explore Courses
-    </button>
-  </Link>
-</div>
-
       {/* Marquee Section */}
       <div data-aos="zoom-out">
         <Marquee speed={30} gradient={false} pauseOnHover={true} className='mb-5 mt-5'>

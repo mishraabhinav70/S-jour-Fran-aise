@@ -1,4 +1,5 @@
 import logo from '/src/assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,26 +23,38 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-medium text-white">Navigation</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="hover:text-white transition-colors">
-                  Welcome
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+
+
+<div className="space-y-4">
+  <h4 className="text-lg font-medium text-white">Navigation</h4>
+  <ul className="space-y-2">
+    <li>
+      <Link
+        to="/"
+        className="text-gray-300 hover:text-white transition-colors"
+      >
+        Welcome
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/about"
+        className="text-gray-300 hover:text-white transition-colors"
+      >
+        About
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/contact"
+        className="text-gray-300 hover:text-white transition-colors"
+      >
+        Contact
+      </Link>
+    </li>
+  </ul>
+</div>
+
 
           {/* Contact Info */}
           <div className="space-y-4">
