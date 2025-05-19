@@ -23,7 +23,7 @@ const RegistrationForm = () => {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -51,14 +51,18 @@ const RegistrationForm = () => {
 
         {/* Title */}
         <div data-aos="fade-up" className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Register Now</h1>
+          <div className="flex items-center justify-center h-screen">
+            <h1 className="text-4xl font-bold text-center text-red-500">
+              We are working...
+            </h1>
+          </div>          {/* <h1 className="text-4xl font-bold text-gray-900 mb-2">Register Now</h1>
           <p className="mt-2 text-lg text-blue-600">
             Join our French learning community and start your language journey today!
-          </p>
+          </p> */}
         </div>
 
         {/* Registration Form */}
-        <div
+        {/* <div
           data-aos="zoom-in"
           className="bg-gray-200 rounded-4xl p-6 space-y-6 shadow-lg shadow-gray-300"
         >
@@ -140,7 +144,7 @@ const RegistrationForm = () => {
               Proceed to Payment
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </section>
   );

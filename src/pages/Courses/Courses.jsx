@@ -136,7 +136,7 @@ const Courses = () => {
                             <div className="px-6 py-5 bg-white text-gray-700 text-base leading-relaxed space-y-3">
                                 {section.content}
                                 <Link to={section.link}>
-                                    <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition">
+                                    <button className="bg-red-500 text-white px-6 py-1 rounded-full text-lg font-medium hover:bg-red-600 transition">
                                         Learn More
                                     </button>
                                 </Link>

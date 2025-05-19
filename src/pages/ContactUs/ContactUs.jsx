@@ -17,9 +17,12 @@ const ContactUs = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_ytufnwn', 'template_4hhoj5n', form.current, {
-        publicKey: 'NQKGus61vmTsUrO2f',
+      .sendForm('service_5d2c0ii', 'template_e4vytjs', form.current, {
+        publicKey: 'VnWF6zeGYuDGGdqB0',
       })
+      // .sendForm('service_ytufnwn', 'template_4hhoj5n', form.current, {
+      //   publicKey: 'NQKGus61vmTsUrO2f',
+      // })
       .then(
         () => {
           console.log('SUCCESS!');
@@ -34,30 +37,31 @@ const ContactUs = () => {
   };
 
   useEffect(() => {
-          AOS.init({
-              duration: 1000, // Animation duration in ms
-              once: false,     // Animation happens only once while scrolling down
-          });
-      }, []);
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      once: false,     // Animation happens only once while scrolling down
+    });
+  }, []);
 
   return (
-    <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8" 
-    data-aos="zoom-out"
-    style={{ backgroundImage: `url(${background})` ,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat',
-    minHeight: '100vh',
-    }}
->
+    <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      data-aos="zoom-out"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+      }}
+    >
 
       <div className="max-w-4xl mx-auto space-y-12">
 
         {/* Title */}
         <div
-        data-aos="fade-up"
-        className="text-center">
+          data-aos="fade-up"
+          className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Contact Us</h1>
           <p className="mt-2 text-lg text-blue-600">
             We'd love to hear from you! Get in touch for any questions, course info, or assistance.
@@ -65,10 +69,10 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Info */}
-        <div 
-            data-aos="zoom-in"
+        <div
+          data-aos="zoom-in"
 
-        className="bg-gray-200 rounded-4xl p-6 space-y-6 shadow-lg shadow-gray-300 ">
+          className="bg-gray-200 rounded-4xl p-6 space-y-6 shadow-lg shadow-gray-300 ">
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Send Us a Message</h2>
             <p className="text-gray-700 text-lg">
