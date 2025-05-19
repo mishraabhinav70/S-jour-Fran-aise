@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import cover from '/src/assets/cover.jpg';
+import cover from '/src/assets/animatedcover.gif';
+import Mobilecover from '/src/assets/mobilegif5.gif';
 
 function OrientationTest() {
   useEffect(() => {
@@ -12,22 +13,30 @@ function OrientationTest() {
     <div className="bg-gray-50">
       <section className="bg-white">
         {/* Hero Section */}
-        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
+        <section className="relative h-[500px] text-white flex items-center justify-center">
+          {/* Large screen image */}
+          <img
+            src={cover}
+            alt="Orientation Test"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
+
+          {/* Medium & small screen image */}
+          <img
+            src={Mobilecover}
+            alt="Orientation Test Mobile"
+            className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+          />
           <div className="relative z-10 text-center px-6 max-w-3xl">
-            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-extrabold mb-4">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
               Orientation Test
             </h1>
-            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
               The orientation test helps assess your current French proficiency. It ensures you start learning at the right level and sets the foundation for a rewarding language learning experience with us!
             </p>
           </div>
-           <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-                    style={{ backgroundImage: `url(${cover})` }}
-                  ></div>
         </section>
-        
+      
         {/* Section Intro */}
         <div className="max-w-screen-xl mx-auto px-4 py-10 text-lg text-gray-800">
           <h2 data-aos="fade-up" className="text-2xl font-semibold mb-4 text-center">

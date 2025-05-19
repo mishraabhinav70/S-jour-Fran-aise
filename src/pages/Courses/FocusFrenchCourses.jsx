@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Marquee from 'react-fast-marquee';
+import Mobilecover from '/src/assets/mobilegif5.gif';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import cover from '/src/assets/cover.jpg';
+import cover from '/src/assets/animatedcover.gif';
 
 function FocusFrenchCourses() {
   useEffect(() => {
@@ -17,24 +17,33 @@ function FocusFrenchCourses() {
     <div className="bg-gray-50">
       <section className="bg-white">
         {/* Hero Section */}
-        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
+        <section className="relative h-[500px] text-white flex items-center justify-center">
+          {/* Large screen image */}
+          <img
+            src={cover}
+            alt="Orientation Test"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
+
+          {/* Medium & small screen image */}
+          <img
+            src={Mobilecover}
+            alt="Orientation Test Mobile"
+            className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+          />
           <div className="relative z-10 text-center px-6 max-w-3xl">
-            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
               Focus French Courses (Beginners / Non-Beginners)
             </h1>
-            <h2 data-aos="fade-up" className="text-2xl font-semibold text-white mb-4">
+            <h2 data-aos="fade-up" className="text-2xl font-semibold text-black mb-4">
               Course Overview
             </h2>
-            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl">
-              In addition to general classes, Séjour Française offers you a wide range of Focus French Courses adapted to your learning needs. Improve specific language skills such as pronunciation or grammar, get ready for your exams. Complete your learning journey with us by signing up to our Focus French classes and immerse more into French language and culture!          </p>
-
+            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
+              In addition to general classes, Séjour Française offers you a wide range of Focus French Courses adapted to your learning needs. Improve specific language skills such as pronunciation or grammar, get ready for your exams. Complete your learning journey with us by signing up to our Focus French classes and immerse more into French language and culture!
+            </p>
           </div>
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-            style={{ backgroundImage: `url(${cover})` }}
-          ></div>
         </section>
+
 
         {/* Focused Courses */}
         <div data-aos="fade-up" className=" py-12 rounded-lg">
@@ -111,9 +120,9 @@ function FocusFrenchCourses() {
         {/* Final CTA */}
         <div className="text-center py-16 px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Start Your French Journey?</h2>
-          <Link to="/">
-            <button className="bg-blue-700 hover:bg-blue-900 text-white font-semibold py-4 px-8 rounded-md text-lg transition">
-              Register Now
+          <Link to="/courses">
+            <button className="bg-red-500 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-red-600 transition">
+              Register now
             </button>
           </Link>
         </div>

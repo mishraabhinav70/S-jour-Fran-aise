@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Mobilecover from '/src/assets/mobilegif5.gif';
+import cover from '/src/assets/animatedcover.gif';
 
 const Courses = () => {
     const [openSection, setOpenSection] = useState(null);
@@ -74,18 +76,41 @@ const Courses = () => {
             ),
             link: "/orientationtest"
         },
-        
+
     ];
 
     return (
         <section className="bg-white">
             {/* Hero Section */}
-            <div className="bg-blue-600 text-white py-20 px-4 text-center" data-aos="fade-down">
+            <section className="relative h-[500px] text-white flex items-center justify-center">
+                {/* Large screen image */}
+                <img
+                    src={cover}
+                    alt="Orientation Test"
+                    className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+                />
+
+                {/* Medium & small screen image */}
+                <img
+                    src={Mobilecover}
+                    alt="Orientation Test Mobile"
+                    className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+                />
+                <div className="relative z-10 text-center px-6 max-w-3xl">
+                    <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
+                        Explore Our French Courses                              </h1>
+
+                    <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
+                        Choose from a variety of specialized French classes designed to help you grow — whether you're a beginner or preparing for exams.
+                    </p>
+                </div>
+            </section>
+            {/* <div className="bg-blue-600 text-white py-20 px-4 text-center" data-aos="fade-down">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Explore Our French Courses</h1>
                 <p className="text-lg md:text-xl max-w-3xl mx-auto">
                     Choose from a variety of specialized French classes designed to help you grow — whether you're a beginner or preparing for exams.
                 </p>
-            </div>
+            </div> */}
 
             {/* Course Accordion */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-6">
@@ -123,5 +148,4 @@ const Courses = () => {
         </section>
     );
 };
-
 export default Courses;

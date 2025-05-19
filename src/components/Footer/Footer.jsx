@@ -15,7 +15,7 @@ const Footer = () => {
               src={logo}
               alt="Institution Logo"
             />
-                        <h3 className="text-lg font-semibold text-red-500">Séjour Française</h3>
+                        <h3 className="text-lg font-semibold text-red-500 m-0">Séjour Française</h3>
 
             <p className="text-gray-400 ">
               …Your Path to Mastering French

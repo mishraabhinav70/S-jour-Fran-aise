@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BookOpenCheck, UserCheck, Globe2, CalendarDays, School, Languages } from 'lucide-react';
-import cover from '/src/assets/cover.jpg';
+import cover from '/src/assets/animatedcover.gif';
+import Mobilecover from '/src/assets/mobilegif5.gif';
 
 function PrivateTuition() {
   useEffect(() => {
@@ -40,20 +41,30 @@ function PrivateTuition() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-        <img src={cover} alt="Private Tuition" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
-        <div className="relative z-10 text-center px-6 max-w-3xl">
-          <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-extrabold mb-4">
-          Learn French at your own pace with skilled French tutors Online!          </h1>
-          <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl">
-          Our private tuition are tailored-made to fit your language goals and schedules.
-          They are an increasingly popular option among our students! Here are a few reasons why you should choose private French tuition with Séjour Française          </p>
-        </div>
-         <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-                  style={{ backgroundImage: `url(${cover})` }}
-                ></div>
-      </section>
+      <section className="relative h-[500px] text-white flex items-center justify-center">
+                {/* Large screen image */}
+                <img
+                  src={cover}
+                  alt="Orientation Test"
+                  className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+                />
+      
+                {/* Medium & small screen image */}
+                <img
+                  src={Mobilecover}
+                  alt="Orientation Test Mobile"
+                  className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+                />
+                <div className="relative z-10 text-center px-6 max-w-3xl">
+                  <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
+          Learn French at your own pace with skilled French tutors Online!     
+                  </h1>
+                  
+                  <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
+          Our private tuition are tailored-made to fit your language goals and schedules. They are an increasingly popular option among our students! Here are a few reasons why you should choose private French tuition with Séjour Française       
+                  </p>
+                </div>
+              </section>
 
       {/* Why Choose Us */}
       <section className="py-16 px-4 max-w-7xl mx-auto">

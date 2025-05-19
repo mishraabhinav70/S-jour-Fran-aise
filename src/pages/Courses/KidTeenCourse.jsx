@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import cover from '/src/assets/cover.jpg';
+import cover from '/src/assets/animatedcover.gif';
+import Mobilecover from '/src/assets/mobilegif5.gif';
+
 
 function KidTeenCourse() {
   useEffect(() => {
@@ -16,27 +18,36 @@ function KidTeenCourse() {
   return (
     <div className="bg-white">
       <section className=" bg-white">
-        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
-          <div className="relative z-10 text-center pt-20 px-6 max-w-3xl">
-            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-white mb-6">
+        {/* Hero Section */}
+        <section className="relative h-[500px] text-white flex items-center justify-center">
+          {/* Large screen image */}
+          <img
+            src={cover}
+            alt="Orientation Test"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
+
+          {/* Medium & small screen image */}
+          <img
+            src={Mobilecover}
+            alt="Orientation Test Mobile"
+            className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+          />
+          <div className="relative z-10 text-center px-6 max-w-3xl">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
               Kids & Teens French Classes
             </h1>
-
-            <h2 data-aos="fade-up" className="text-2xl font-semibold text-white mb-4">
+            <h2 data-aos="fade-up" className="text-2xl font-semibold text-black mb-4">
               Course Overview
             </h2>
-            <p data-aos="fade-up" className="text-lg text-gray-100 max-w-3xl mx-auto mb-12">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
               Our institute offers <strong>customized French lessons</strong> for students across all grades,
               designed to meet the specific needs of each learner. Whether you're starting with
-              the basics or looking to improve your fluency, we have the right program for you!
-            </p>
+              the basics or looking to improve your fluency, we have the right program for you!            </p>
           </div>
-           <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-                    style={{ backgroundImage: `url(${cover})` }}
-                  ></div>
         </section>
+        
+        {/* Program Highlights */}
         <div className='text-center pt-10'>
           <h2 data-aos="fade-up" className="text-2xl font-semibold text-black mb-6">
             Program Highlights
@@ -53,7 +64,7 @@ function KidTeenCourse() {
             and effective.
           </p>
         </div>
-       
+
         {/* Age Groups */}
         <div data-aos="fade-up" className=" py-5 mt-8  rounded-lg">
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">

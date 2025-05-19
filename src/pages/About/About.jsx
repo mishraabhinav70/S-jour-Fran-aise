@@ -14,8 +14,8 @@ const AboutUs = () => {
 
         {/* Header */}
         <div data-aos="fade-up" className="text-center">
-          <h1 className="text-4xl font-extrabold text-blue-600">About Séjour Française</h1>
-          <p className="mt-3 text-lg text-red-600">...Your Path to Mastering French 🇫🇷</p>
+          <h1 className="text-4xl font-extrabold text-blue-600">About <span className='text-red-500'>Séjour Française</span></h1>
+          <p className="mt-3 text-lg text-black italic ">...Your Path to Mastering French 🇫🇷</p>
         </div>
 
         {/* Mission */}
@@ -60,7 +60,7 @@ const AboutUs = () => {
           <p className="text-black text-lg leading-relaxed mb-6">
             Whether you're learning French as <strong>school subject, travel, study, work, or simply for the love of the language</strong>, we’re here to help you reach your goals — with confidence and joy.          </p>
           <Link to="/courses">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition">
+            <button className="bg-red-500 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-red-600 transition">
               Explore Courses
             </button>
           </Link>

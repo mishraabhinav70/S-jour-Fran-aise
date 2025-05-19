@@ -61,7 +61,7 @@ const Home = () => {
       id: 3,
       name: "Élise Martin, Singapore 🇸🇬",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      review: "Séjour Française has a perfect balance of tech and teaching. The AI exercises helped me prepare for the TEF exam with confidence. Highly recommended for Canada immigration applicants.",
+      review: "Basically need to add regular online classes and AI assistance after classes helped me prepare for TEF Séjour Française has a perfect balance of tech and teaching. The AI exercises helped me prepare for the TEF exam with confidence. Highly recommended for Canada immigration applicants.",
       backgroundColor: "bg-white",
     },
   ];

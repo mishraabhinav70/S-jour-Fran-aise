@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Marquee from 'react-fast-marquee';
-import cover from '/src/assets/cover.jpg';
+import cover from '/src/assets/animatedcover.gif';
+import Mobilecover from '/src/assets/mobilegif5.gif';
 
 function TcfTefCourse() {
   useEffect(() => {
@@ -13,20 +14,30 @@ function TcfTefCourse() {
     <div className="bg-gray-50">
       <section className="bg-white">
         {/* Hero Section */}
-        <section className="relative h-[500px] bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400 text-white flex items-center justify-center">
-          <img src={cover} alt="Orientation Test" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 blur-lg" />
+        <section className="relative h-[500px] text-white flex items-center justify-center">
+          {/* Large screen image */}
+          <img
+            src={cover}
+            alt="Orientation Test"
+            className="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-100 z-0"
+          />
+
+          {/* Medium & small screen image */}
+          <img
+            src={Mobilecover}
+            alt="Orientation Test Mobile"
+            className="block lg:hidden absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+          />
           <div className="relative z-10 text-center px-6 max-w-3xl">
-            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-extrabold mb-4">
-              TCF / TEF Exam                  </h1>
-            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold text-red-500 mb-6">
+              TCF / TEF Exam
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100" className="text-lg sm:text-xl text-black bg-gray-100/70 rounded-lg p-4">
               TCF/TEF Canada is a test of general French, recognized as an official proof of language proficiency by Immigration, Refugees and Citizenship Canada (IRCC)  for permanent residency applications. The objective of the TCF/TEF Canada is to evaluate your French skills on a scale of 6 levels. This scale corresponds to the Council of Europe’s Common European Framework of Reference for Languages (CEFR).
             </p>
           </div>
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-2xl"
-            style={{ backgroundImage: `url(${cover})` }}
-          ></div>
         </section>
+
         {/* Marquee */}
         <Marquee gradient={false} speed={50} className="bg-red-500 text-2xl font-bold p-7 text-white mb-12 mt-11 rounded-lg">
           TCF / TEF 2025 registrations now open — Limited slots available! &nbsp;
