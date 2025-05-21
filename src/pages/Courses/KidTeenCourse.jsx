@@ -70,7 +70,7 @@ function KidTeenCourse() {
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
             <div className="text-center p-8 bg-blue-500/20 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold text-blue-950">Kids</h3>
-              <p className="text-gray-600">Ages 9–12 years</p>
+              <p className="text-gray-600">Ages 6–12 years</p>
             </div>
             <div className="text-center p-8 bg-blue-500/20 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold text-blue-950">Teens</h3>
