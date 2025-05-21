@@ -183,7 +183,7 @@ function KidTeenCourse() {
             </p>
 
             <h2 data-aos="fade-up" className="text-2xl font-semibold text-blue-950 mb-6">
-              Kids age limit – 9 to 12 years<br />
+              Kids age limit – 6 to 12 years<br />
               Teens age limit – 13 to 16 years
             </h2>
             <p data-aos="fade-up" className="text-lg text-blue-950 max-w-3xl mx-auto mb-12">
