@@ -105,6 +105,9 @@ const Header = () => {
                   </div>
                 )}
               </div>
+              <Link to="/pricing" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
+              View Pricing
+              </Link>
 
               <Link to="/about" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
                 About
@@ -177,7 +180,9 @@ const Header = () => {
                   </div>
                 )}
               </div>
-
+ <Link to="/pricing" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
+              View Pricing
+              </Link>
               <Link to='/about' onClick={handleMobileLinkClick} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-blue-900">
                 About
               </Link>

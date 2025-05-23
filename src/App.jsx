@@ -12,6 +12,7 @@ import TcfTefCourse from './pages/Courses/TcfTefCourse'
 import OrientationTest from './pages/Courses/OrientationTest'
 import PrivateTuition from './pages/Courses/PrivateTuition'
 import RegistrationForm from './pages/RegistrationForm/RegistrationForm'
+import PricingPage from './pages/Price/PricingPage'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/orientationtest' element={<OrientationTest/>}/>
         <Route path='/PrivateTuition' element={<PrivateTuition />}/>
         <Route path='/registration' element={<RegistrationForm/>}/>
+        <Route path='/pricing' element={<PricingPage/>}/>
       </Routes>
       <Footer />
       </BrowserRouter>
