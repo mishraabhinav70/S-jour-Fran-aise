@@ -14,80 +14,80 @@ const pricingData = {
       title: "Fun French (A1 Prep Basics)",
       age: "6–9 yrs",
       duration: "8 weeks • 2×/week • 1 hr",
-      group: "₹6,000 – ₹7,500",
-      individual: "₹10,000 – ₹12,000"
+      group: "₹6,500",
+      individual: "₹11,000"
     },
     {
       title: "A1–A2 Foundation",
       age: "10–13 yrs",
       duration: "10 weeks • 2×/week • 1.5 hrs",
-      group: "₹7,500 – ₹9,000",
-      individual: "₹12,000 – ₹14,000"
+      group: "₹8,000",
+      individual: "₹13,000"
     },
     {
       title: "A2–B1 / DELF Junior Prep",
       age: "14–17 yrs",
       duration: "12 weeks • 3×/week • 1.5 hrs",
-      group: "₹9,000 – ₹11,000",
-      individual: "₹15,000 – ₹17,000"
+      group: "₹10,000",
+      individual: "₹16,000"
     }
   ],
   "Crash Course": [
     {
       title: "Basic French Crash Course",
       duration: "3 Months • 2×/week • 1.5 hrs",
-      group: "₹6,500 – ₹8,000",
-      miniGroup: "₹9,000 – ₹10,500",
-      individual: "₹12,000 – ₹14,000"
+      group: "₹7,000",
+      miniGroup: "₹10,000",
+      individual: "₹13,000"
     }
   ],
   "DELF/DALF Prep": [
     {
       title: "DELF A1",
       duration: "8–10 weeks • 30–36 hrs",
-      group: "₹6,500 – ₹8,000",
-      individual: "₹10,000 – ₹12,000"
+      group: "₹7,000",
+      individual: "₹11,000"
     },
     {
       title: "DELF A2",
       duration: "10–12 weeks • 36–42 hrs",
-      group: "₹7,000 – ₹9,000",
-      individual: "₹11,000 – ₹13,000"
+      group: "₹8,000",
+      individual: "₹12,000"
     },
     {
       title: "DELF B1",
       duration: "12–14 weeks • 45–50 hrs",
-      group: "₹8,500 – ₹10,500",
-      individual: "₹13,000 – ₹15,000"
+      group: "₹9,500",
+      individual: "₹14,000"
     },
     {
       title: "DELF B2",
       duration: "14–16 weeks • 50–60 hrs",
-      group: "₹10,000 – ₹12,000",
-      individual: "₹15,000 – ₹17,000"
+      group: "₹11,000",
+      individual: "₹16,000"
     }
   ],
   "TEF/TCF Program": [
     {
       title: "A1–A2 Phase (4 Months)",
       duration: "3×/week • 1.5 hrs",
-      group: "₹20,000 – ₹22,000",
-      miniGroup: "₹23,000 – ₹25,000",
-      individual: "₹26,000 – ₹28,000"
+      group: "₹21,000",
+      miniGroup: "₹24,000",
+      individual: "₹27,000"
     },
     {
       title: "B1–B2 Phase (4 Months)",
       duration: "2–3×/week • 1.5 hrs",
-      group: "₹22,000 – ₹24,000",
-      miniGroup: "₹25,000 – ₹27,000",
-      individual: "₹28,000 – ₹30,000"
+      group: "₹23,000",
+      miniGroup: "₹26,000",
+      individual: "₹30,000"
     },
     {
       title: "TEF/TCF Final Phase (2 Months)",
       duration: "3×/week • 2 hrs",
-      group: "₹13,000 – ₹15,000",
-      miniGroup: "₹15,000 – ₹17,000",
-      individual: "₹18,000 – ₹20,000"
+      group: "₹15,000",
+      miniGroup: "₹17,000",
+      individual: "₹20,000"
     },
     {
       title: "Combo: A1 to TEF/TCF (10 Months)",
