@@ -106,7 +106,7 @@ const Header = () => {
                 )}
               </div>
               <Link to="/pricing" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
-              View Pricing
+              View pricing
               </Link>
 
               <Link to="/about" className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium">
